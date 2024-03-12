@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ParkTirana</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="/dashboard">
+            <span>
+              ParkTirana
+            </span>
+          </a>
+
+      <div class="navbar-collapse" id="">
+        <div class="user_option">
+          <a href="/profilepage">
+            {{loggedUser.first_name}} {{loggedUser.last_name}}
+          </a>
+        </div>
+        <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div id="myNav" class="overlay">
+          <div class="overlay-content">
+            <a href="/dashboard">Home</a>
+            <a href="/cars">Cars</a>
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- end header section -->
+  </div>
+  <!-- Profile section -->
+  <section class="profile_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Your Profile
+        </h2>
+        <p>
+          View and manage your profile details below
+        </p>
+      </div>
+      <div class="profile_details">
+        <section class="ticket-section section-padding">
+          {% with messages = get_flashed_messages(category_filter=["updateSucces"]) %}
+          {% if messages %}
+              
+              {% for message in messages %}
+              <p class="text-success text-center">{{ message }}</p>
+              {% endfor %}
+              
+          {% endif %}
+          {% endwith %}
+      <form action="/edit/user" method="post" class="w-50 m-auto mt-5 form-container">
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" name="first_name" value="{{loggedUser.first_name}}" class="form-control" id="first_name" >
+           
+          </div>
+          
+          {% with messages = get_flashed_messages(category_filter=["nameRegister"]) %}
+          {% if messages %}
+              
+              {% for message in messages %}
+              <p class="text-danger text-center">{{ message }}</p>
+              {% endfor %}
+              
+          {% endif %}
+          {% endwith %}
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Last name</label>
+            <input type="text" name="last_name"  value="{{loggedUser.last_name}}" class="form-control" id="last_name" >
+           
+          </div>
+          {% with messages = get_flashed_messages(category_filter=["lastNameRegister"]) %}
+          {% if messages %}
+              
+              {% for message in messages %}
+              <p class="text-danger text-center">{{ message }}</p>
+              {% endfor %}
+              
+          {% endif %}
+          {% endwith %}
+      
+          <div class="mb-3">
+              <label for="email" class="form-label">E mail</label>
+              <input type="email" name="email"  value="{{loggedUser.email}}" class="form-control" id="email" >
+             
+            </div>
+            {% with messages = get_flashed_messages(category_filter=["emailRegister"]) %}
+            {% if messages %}
+                
+                {% for message in messages %}
+                <p class="text-danger text-center">{{ message }}</p>
+                {% endfor %}
+                
+            {% endif %}
+            {% endwith %}
+        
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+      </div>
+  </section>
+      </div>
+    </div>
+  </section>
+  <!-- end Profile section -->
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2024 All Rights Reserved. Powered by
+      <p>Grupi nr.1</p>
+    </p>
+  </footer>
+  <!-- footer section -->
+
+
+  <script src="../static/js/jquery-3.4.1.min.js"></script>
+  <script src="../static/js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="../static/js/bootstrap.js"></script>
+
+
+</body>
+
+</html>

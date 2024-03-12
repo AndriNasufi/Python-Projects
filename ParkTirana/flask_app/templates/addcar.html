@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+  
+    <title>ParkTirana</title>
+  
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+  
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+  
+    <!-- Custom styles for this template -->
+    <link href="../static/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="../static/css/responsive.css" rel="stylesheet" />
+
+  </head>
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ParkTirana
+            </span>
+          </a>
+
+          <div class="navbar-collapse" id="">
+            <div class="user_option">
+
+            </div>
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="dashboard.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="car.html">Cars</a>
+                <a href="contact.html">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- Add New Car section -->
+  <section class="edit_profile_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Add New Car
+        </h2>
+        <p>
+          Fill in the details of the new car below
+        </p>
+      </div>
+      <div class="profile_form">
+        <form action="/cars/create" method="post" enctype="multipart/form-data" class="form-container">
+          <div class="form-group">
+            <label for="car_brand">Car Brand:</label>
+            <input type="text" name="car_brand" class="form-control" id="car_brand">
+          </div>
+          {% with messages = get_flashed_messages(category_filter=["car_brand"]) %}
+          {% if messages %}
+          {% for message in messages %}
+          <p class="text-danger text-center">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <div class="form-group">
+            <label for="license_plate">License Plate:</label>
+            <input type="text" name="license_plate" class="form-control" id="license_plate">
+          </div>
+          {% with messages = get_flashed_messages(category_filter=["license_plate"]) %}
+          {% if messages %}
+          {% for message in messages %}
+          <p class="text-danger text-center">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <div class="form-group">
+            <label class="pt-2" for="image_upload">Upload Car Image:</label>
+            <br>
+            <input class="form-control" type="file" id="image_upload" name="imageupload" accept="image/*"><br><br>
+          </div>        
+          <button type="submit" class="btn btn-primary">Add Car!</button>
+        </form>        
+      </div>
+    </div>
+  </section>
+  <!-- end Add New Car section -->
+
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2024 All Rights Reserved. Powered by
+      <p>Grupi nr.1</p>
+    </p>
+  </footer>
+  <!-- footer section -->
+
+
+
+  <script src="../static/js/jquery-3.4.1.min.js"></script>
+  <script src="../static/js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="../static/js/bootstrap.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ParkTirana</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+
+  <style>
+    /* Card and form styling */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .price {
+      color: grey;
+      font-size: 22px;
+    }
+
+    .card button {
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .card button:hover {
+      opacity: 0.7;
+    }
+
+    .custom-form {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-form label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .custom-form input[type="text"],
+    .custom-form input[type="tel"],
+    .custom-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .custom-form input[type="time"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .custom-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .custom-form button:hover {
+      background-color: #333;
+    }
+
+    .pic {
+      height: 220px;
+    }
+
+  </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ParkTirana
+            </span>
+          </a>
+          <div class="navbar-collapse" id="">
+            <div class="user_option">
+              <a href="">
+                {{loggedUser.first_name}} {{loggedUser.last_name}}<!-- Display username here -->
+              </a>
+            </div>
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+                <div class="overlay-content">
+                    <a href="/dashboard">Home</a>
+                  <a href="/cars">Cars</a>
+                  <a href="/zones">Zones</a>
+                  <a href="/profilepage">Profile</a>
+                  <a href="#contactus">Contact Us</a>
+                  <a href="/logout">Logout</a> 
+                </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- car section -->
+  <div class="d-flex">
+    <div class="card">
+      <img src="../static/images/35129090161_8e71f4f7e4_k-1024x683-1.jpg" alt="Denim Jeans" style="width:100%">
+      <h3>Parkingu Nëntokësor “Sheshi Skënderbej”</h1>
+        <p class="price">300L-Ora</p>
+        <p>Parkimi i parë publik nëntokësor te Sheshi “Skënderbej” ju ofron jo vetëm çmime të lira, por njëkohësisht standarde, siguri dhe shërbim 24 orë.</p>
+    </div>
+
+    <div class="card">
+      <img src="../static/images/sheshi italia.jpg" alt="Denim Jeans" style="width:100%">
+      <h3>Parkingu Nëntokësor “Sheshi Italia”</h3>
+      <p class="price">200L-Ora</p>
+      <p>Ky parkim nëntokësor ka një kapacitet prej 198 vende parkimi, 23 e-charger për makinat elektrike për të lehtësuar lidhjen me sheshin “Italia”</p>
+    </div>
+
+    <div class="card">
+      <img src="../static/images/7 Xhuxhat.jpg" alt="Denim Jeans" style="width:100%">
+      <h3>Tirana Parking 7 Xhuxhat</h3>
+      <p class="price">200L-Ora</p>
+      <p>Duke filluar nga data 02.06.2020, hapet zyra më e re në zemër të Tiranës, pranë shesh parkimit “7 Xhuxhat”, “Rr. e Elbasanit”.</p>
+    </div>
+
+    <div class="card">
+      <img class="pic" src="../static/images/bulevardi i ri 2.jpg" alt="Denim Jeans" style="width:100%">
+      <h3 class="mt-3">TParkingu Nëntokësor "Bulevardi i Ri"</h3>
+      <p class="price">300L-Ora</p>
+      <p>Parkingu i dytë Nëntokësor në Bulevardin e Ri, Zona B, e Sherbimit Publik, inaguruar më datë 21 Qershor 2017</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-10 mx-auto">
+        <form class="custom-form ticket-form mb-5 mb-lg-0" action="/add/reservation" method="post" role="form">
+            <div class="ticket-form-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-12 mt-3">
+                  <label for="zone">Choose Zone:</label><br>
+                  <select id="zone" name="zone_name" class="form-control">
+                    <option value="Zona A">Parkingu Nëntokësor “Bulevardi i Ri “</option>
+                    <option value="Zona B">ADRESA Parkingu Nëntokësor “Sheshi Italia”</option>
+                    <option value="Zona C">ADRESA Parkingu Nëntokësor “7 Xhuxhat”</option>
+                    <option value="Zona D">ADRESA Parkingu Nëntokësor “Sheshi Skenderbej”</option>
+                  </select>
+                </div>                
+                <div class="col-lg-6 col-md-6 col-12 mt-5">
+                  <input type="text" name="full_name" id="ticket-form-name" class="form-control" placeholder="Full name" required>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 mt-4">
+                  <label for="begin_time">Begin Time:</label><br>
+                  <input type="time" name="begin_time" id="begin_time" class="form-control" placeholder="Begin time" required>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 mt-4">
+                  <label for="end_time">End Time:</label><br>
+                  <input type="time" name="end_time" id="end_time" class="form-control" placeholder="End time" required>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 mt-4">
+                  <input type="tel" class="form-control" name="tel_num" placeholder="Telephone number" required>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 ">
+                  <label for="car_brand">Car Brand:</label><br>
+                  <select id="car_brand" name="car_brand" class="form-control">
+                    {% for car in cars%}
+                    <option value="{{car.car_brand}}">{{car.car_brand}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                  <button type="submit" class="form-control btn btn-primary">Reserve Zone</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          
+        <!-- More cars can be added dynamically here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="../static/js/jquery-3.4.1.min.js"></script>
+  <script src="../static/js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="../static/js/bootstrap.js"></script>
+</body>
+
+</html>

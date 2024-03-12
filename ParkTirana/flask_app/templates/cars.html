@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ParkTirana</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: 10px;
+      text-align: center;
+      font-family: arial;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .btn-box {
+      margin-top: 20px;
+    }
+
+    .btn-box a {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-box a:hover {
+      background-color: #0056b3;
+    }
+
+    .car_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ParkTirana
+            </span>
+          </a>
+          <div class="navbar-collapse" id="">
+            <div class="user_option">
+              <a href="">
+                {{loggedUser.first_name}} {{loggedUser.last_name}}<!-- Display username here -->
+              </a>
+            </div>
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="/aboutus">About</a>
+                <a href="/cars">Cars</a>
+                <a href="/zones">Zones</a>
+                <a href="/profilepage">Profile</a>
+                <a href="#contactus">Contact Us</a>
+                <a href="/logout">Logout</a> 
+              </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- car section -->
+
+  <section class="car_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Your Cars <!-- Change the heading to indicate the user's cars -->
+        </h2>
+        <!-- Button to add a new car -->
+        <div class="btn-box">
+          <a href="/cars/new">
+            Add Car
+          </a>
+        </div>
+      </div>
+      <div class="car_container">
+        <!-- Loop through user's cars and display them -->
+        <div class="car_container">
+          <!-- Loop through user's cars and display them -->
+          {% for car in cars %}
+
+          <div class="card event-container">
+              <div class="card-body">
+                  <h5 class="card-title">Car Brand: {{ car.car_brand }}</h5>
+                  <p class="card-text">License Plate: {{ car.license_plate }}</p>
+                  <img height="250px" width="260px" src="../static/images/{{ car.image_upload }}" alt="img">
+                  {% if car.user_id == loggedUser['id'] %}
+                  <a href="/delete/{{car.id}}">Fshij</a>
+                  {% endif %}
+              </div>
+          </div>
+          <!-- More cars can be added dynamically here -->
+
+          {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end car section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2020 All Rights Reserved. Design by
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
+  </footer>
+  <!-- footer section -->
+
+
+  <script src="../static/js/jquery-3.4.1.min.js"></script>
+  <script src="../static/js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="../static/js/bootstrap.js"></script>
+
+
+</body>
+
+</html>
