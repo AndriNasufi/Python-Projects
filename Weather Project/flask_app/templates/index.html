@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+  <main>
+    <!-- Header -->
+    <header class="container">
+      <div class="row">
+        <h1 class="col d-flex justify-content-center align-items-center">
+          Weather App
+        </h1>
+      </div>
+    </header>
+
+    <!-- Current Weather Section -->
+    <section class="current-weather">
+      <div class="container">
+        <div class="row">
+          <!-- Temperature Display -->
+          <div class="col text-center">
+            <div>
+              <h2 id="day"></h2>
+              <p id="current-time"></p>
+            </div>
+            <h1 class="temp-title">{{ current_temp }}°</h1>
+            <p>Feels like: {{ feels_like }}°</p>
+            <div class="todays-info">
+              <!-- Weather Description and Feels Like -->
+              <h3 id="weather-type">{{ weather_description }}</h3>
+              <!-- Weather Icon -->
+              <div>
+                {% for condition_index in range(weather_conditions|length) %}
+                {% if weather_description == weather_conditions[condition_index] %}
+                <img src="{{ weather_icons[condition_index] }}" alt="Weather Icon" class="weather-icon mt-3">
+                {% endif %}
+                {% endfor %}
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Current Temperature</th>
+                    <th>Description</th>
+                    <th>Feels Like</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for weather in weather_history %}
+                  <tr>
+                    <td>{{ weather.current_temp }}</td>
+                    <td>{{ weather.weather_description }}</td>
+                    <td>{{ weather.feels_like }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- External JavaScript -->
+  <script src="../static/js/scripts.js"></script>
+</body>
+
+</html>
