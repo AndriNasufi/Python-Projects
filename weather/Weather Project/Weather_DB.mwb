@@ -1,0 +1,3 @@
+  Use weather_project;
+  SELECT * FROM 	weather;
+DELETE  FROM weather WHERE id>10
