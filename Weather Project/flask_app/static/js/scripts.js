@@ -29,9 +29,9 @@ window.onload = function () {
     displayCurrentDay();
 };
 
-// Refresh the page every 150 seconds (2.5 minutes)
+// Refresh the page every 300 seconds
 setTimeout(function () {
     window.location.reload(1);
-}, 150000); // 150000 milliseconds = 300 seconds
+}, 300000);
 
 
