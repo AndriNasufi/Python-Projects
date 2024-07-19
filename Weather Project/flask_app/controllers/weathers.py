@@ -51,9 +51,6 @@ def get_weather():
                 
                 return render_template('index.html', current_temp=current_temp, feels_like=feels_like, weather_description=weather_description,weather_conditions=weather_conditions,weather_icons=weather_icons,weather_history=weather_history)
                 
-                
-
-                # Render template with weather data
 
             else:
                 weather_data = Weather.get_weather_data()
