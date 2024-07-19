@@ -13,7 +13,7 @@ API_URL = "https://melchior.moja.it:8085/weather-api/get_weather?lat=41.3281007&
 @app.route('/', methods=['GET'])
 def get_weather():
     try:
-        # Make GET request to the API
+        # GET request from the API
         response = requests.get(API_URL)
         
         # Check if the request was successful
