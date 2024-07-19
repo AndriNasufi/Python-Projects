@@ -32,6 +32,6 @@ window.onload = function () {
 // Refresh the page every 150 seconds (2.5 minutes)
 setTimeout(function () {
     window.location.reload(1);
-}, 150000); // 150000 milliseconds = 150 seconds
+}, 150000); // 150000 milliseconds = 300 seconds
 
 
