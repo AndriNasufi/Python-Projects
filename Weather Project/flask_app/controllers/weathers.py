@@ -39,7 +39,7 @@ def get_weather():
                 def background_thread():
                     
                         get_weather()
-                        time.sleep(150)
+                        time.sleep(300)
                         
                         
                 
