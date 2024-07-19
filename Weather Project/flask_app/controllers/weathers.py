@@ -68,7 +68,7 @@ def save_to_database(weather_data):
     # Insert data into the database using Weather model
     Weather.insert_data(weather_data)
     
-#Creating the arrrays that will be used in the pics logic
+#Creating the lists that will be used in the pics logic
 weather_conditions = ["clear sky","few clouds","broken clouds","shower rain","rain","thunderstorm","snow","mist","overcast clouds","moderate rain","scattered clouds"]
 weather_icons=["../static/icons/clear_sky.png","../static/icons/few_clouds.png","../static/icons/scattered_clouds.png","../static/icons/shower_rain.png","../static/icons/rain.png","../static/icons/thunderstorm.png","../static/icons/snow.png","../static/icons/mist.png","../static/icons/scattered_clouds.png","../static/icons/shower_rain.png","../static/icons/scattered_clouds.png"]
 
